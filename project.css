@@ -1,0 +1,61 @@
+.container {
+  padding: 100px;
+  padding-left: 100px;
+}
+
+.sarasota {
+  color: #4e31aa;
+  font-size: 50px;
+  text-align: center;
+}
+
+.search-bar {
+  width: 200px;
+}
+.data {
+  text-align: right;
+}
+.cities {
+  text-align: right;
+}
+.days {
+  text-align: center;
+}
+.temp {
+  font-size: 20px;
+  text-align: center;
+}
+.temperatures {
+  text-decoration: none;
+}
+.icons {
+  font-size: 50px;
+  color: #3795bd;
+  text-align: center;
+}
+.headicon {
+  display: block;
+  font-size: 100px;
+  text-align: left;
+  color: orange;
+}
+
+.search-button {
+  background-color: #1f8a70;
+  border-color: #1f8a70;
+}
+.search-button:hover {
+  background-color: #1f8a70;
+  border-color: #1f8a70;
+}
+.current-button {
+  background-color: #2f58cd;
+  border-color: #2f58cd;
+}
+.current-button:hover {
+  background-color: #2f58cd;
+  border-color: #2f58cd;
+}
+.card {
+  padding: 10px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/708b546317.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="project.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <div class="container">
+    <body>
+      <div class="card" style="width: 37rem">
+        <div class="container-sm">
+          <form id="search-form">
+            <div class="mb-3">
+              <input
+                class="form-control search-bar"
+                id="exampleFormControlInput1"
+                placeholder="Search city"
+                type="text"
+              />
+            </div>
+            <span
+              ><button type="submit" class="btn search-button" id="search">
+                Search
+              </button>
+              <button type="button" class="btn current-button" id="button">
+                Current
+              </button></span
+            >
+          </form>
+          <span class="cities"><p>Bradenton Venice North Port</p></span>
+          <br />
+          <br />
+
+          <i class="fa-solid fa-cloud-sun headicon"></i>
+          <div class="data">
+            <h3 id="day-time"><strong>Sunday, 9:00 PM</strong></h3>
+            <h5>Partly Cloudy</h5>
+            <h1 id="weather">19</h1>
+            <a href="#" class="temperatures" id="celsius">°C</a> |
+            <a href="#" class="temperatures" id="fahrenheit">°F</a>
+          </div>
+          <h2 class="sarasota" id="hometown">Sarasota, FL</h2>
+          <div class="row days">
+            <div class="col"><h1>Mon</h1></div>
+            <div class="col"><h1>Tue</h1></div>
+            <div class="col"><h1>Wed</h1></div>
+            <div class="col"><h1>Thur</h1></div>
+            <div class="col"><h1>Fri</h1></div>
+          </div>
+          <div class="row icons">
+            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
+            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
+            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
+            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
+            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
+          </div>
+          <br />
+          <div class="row temp">
+            <div class="col"><h2>92°</h2></div>
+            <div class="col"><h2>91°</h2></div>
+            <div class="col"><h2>92°</h2></div>
+            <div class="col"><h2>93°</h2></div>
+            <div class="col"><h2>94°</h2></div>
+          </div>
+        </div>
+      </div>
+      <script src="src/index.mjs"></script>
+    </body>
+  </div>
+</html>
