@@ -1,32 +1,38 @@
 .container {
-  padding: 100px;
-  padding-left: 100px;
+  padding-inline: 400px;
+  margin-top: 10px;
 }
-
+li {
+  list-style: none;
+}
 .sarasota {
   color: #4e31aa;
   font-size: 50px;
   text-align: center;
 }
-
 .search-bar {
+  position: absolute;
   width: 200px;
+  top: 1em;
 }
 .data {
   text-align: right;
 }
+
 .cities {
   text-align: right;
 }
-.days {
-  text-align: center;
+
+.date {
+  font-size: 30px;
 }
-.temp {
-  font-size: 20px;
-  text-align: center;
+.conversion {
+  font-size: 12px;
+  top: -10px;
+  position: relative;
 }
-.temperatures {
-  text-decoration: none;
+.degree {
+  font-size: 30px;
 }
 .icons {
   font-size: 50px;
@@ -34,12 +40,12 @@
   text-align: center;
 }
 .headicon {
-  display: block;
-  font-size: 100px;
-  text-align: left;
+  font-size: 150px;
   color: orange;
+  position: absolute;
+  left: auto;
+  top: 1em;
 }
-
 .search-button {
   background-color: #1f8a70;
   border-color: #1f8a70;
@@ -57,5 +63,11 @@
   border-color: #2f58cd;
 }
 .card {
-  padding: 10px;
+  padding: 20px;
+}
+
+.buttons {
+  display: block;
+  margin: 5px;
+  text-align: right;
 }

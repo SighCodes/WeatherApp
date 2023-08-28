@@ -20,10 +20,20 @@
   </head>
   <div class="container">
     <body>
-      <div class="card" style="width: 37rem">
+      <div class="card" style="width: 35rem">
         <div class="container-sm">
           <form id="search-form">
             <div class="mb-3">
+              <span class="buttons"
+                ><button type="submit" class="btn search-button" id="search">
+                  Search
+                </button>
+                <button type="button" class="btn current-button" id="button">
+                  Current
+                </button></span
+              >
+              <br />
+
               <input
                 class="form-control search-bar"
                 id="exampleFormControlInput1"
@@ -31,50 +41,24 @@
                 type="text"
               />
             </div>
-            <span
-              ><button type="submit" class="btn search-button" id="search">
-                Search
-              </button>
-              <button type="button" class="btn current-button" id="button">
-                Current
-              </button></span
-            >
           </form>
-          <span class="cities"><p>Bradenton Venice North Port</p></span>
-          <br />
-          <br />
-
-          <i class="fa-solid fa-cloud-sun headicon"></i>
           <div class="data">
-            <h3 id="day-time"><strong>Sunday, 9:00 PM</strong></h3>
-            <h5>Partly Cloudy</h5>
-            <h1 id="weather">19</h1>
-            <a href="#" class="temperatures" id="celsius">°C</a> |
-            <a href="#" class="temperatures" id="fahrenheit">°F</a>
+            <h3 class="date" id="daytime"><strong>Sunday, 9:00 PM</strong></h3>
+            <ul>
+              <li>
+                <h5>Partly Cloudy</h5>
+                <span id="weather"
+                  ><strong class="degree" id="temp-unit">19</strong>
+                  <span class="conversion">°C | °F</span></span
+                >
+              </li>
+              <li>Precipitation:</li>
+              <li>Humidity:</li>
+              <li>Wind:</li>
+            </ul>
           </div>
+          <i class="fa-solid fa-cloud-sun headicon"></i>
           <h2 class="sarasota" id="hometown">Sarasota, FL</h2>
-          <div class="row days">
-            <div class="col"><h1>Mon</h1></div>
-            <div class="col"><h1>Tue</h1></div>
-            <div class="col"><h1>Wed</h1></div>
-            <div class="col"><h1>Thur</h1></div>
-            <div class="col"><h1>Fri</h1></div>
-          </div>
-          <div class="row icons">
-            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-            <div class="col"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-          </div>
-          <br />
-          <div class="row temp">
-            <div class="col"><h2>92°</h2></div>
-            <div class="col"><h2>91°</h2></div>
-            <div class="col"><h2>92°</h2></div>
-            <div class="col"><h2>93°</h2></div>
-            <div class="col"><h2>94°</h2></div>
-          </div>
         </div>
       </div>
       <script src="HWJS.js"></script>

@@ -1,6 +1,13 @@
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", searchButton);
 let form = document.querySelector("#search-form");
+function showDate(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDay();
+  return `${day}, ${hour}:${minutes}`;
+}
 
 function searchButton(event) {
   event.preventDefault();
@@ -16,8 +23,9 @@ form.addEventListener("submit", searchButton);
 
 function handleTemp(event) {
   let city = document.querySelector("#hometown");
-  let temperatureElement = document.querySelector("#weather");
-
+  let temperatureElement = document.querySelector("#temp-unit");
+  let dayElement = document.querySelector("#daytime");
   city.innerHTML = event.data.name;
   temperatureElement.innerHTML = event.data.main.temp;
+  dayElement.innerHTML = showDate(event.data.dt * 1000);
 }
