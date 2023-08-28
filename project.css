@@ -18,13 +18,15 @@ li {
 .data {
   text-align: right;
 }
-
+.status {
+  text-transform: capitalize;
+}
 .cities {
   text-align: right;
 }
 
 .date {
-  font-size: 30px;
+  font-size: 20px;
 }
 .conversion {
   font-size: 12px;
@@ -32,7 +34,7 @@ li {
   position: relative;
 }
 .degree {
-  font-size: 30px;
+  font-size: 22px;
 }
 .icons {
   font-size: 50px;
@@ -44,7 +46,7 @@ li {
   color: orange;
   position: absolute;
   left: auto;
-  top: 1em;
+  top: 0.6em;
 }
 .search-button {
   background-color: #1f8a70;

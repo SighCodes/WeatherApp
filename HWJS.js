@@ -4,8 +4,15 @@ let form = document.querySelector("#search-form");
 function showDate(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${minutes}`;
+  }
   let minutes = date.getMinutes();
-  let day = date.getDay();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = days[date.getDay()];
   return `${day}, ${hour}:${minutes}`;
 }
 
@@ -25,7 +32,13 @@ function handleTemp(event) {
   let city = document.querySelector("#hometown");
   let temperatureElement = document.querySelector("#temp-unit");
   let dayElement = document.querySelector("#daytime");
+  let wind = document.querySelector("#wind");
+  let humidity = document.querySelector("#humid");
+  let description = document.querySelector("#condition");
   city.innerHTML = event.data.name;
   temperatureElement.innerHTML = event.data.main.temp;
   dayElement.innerHTML = showDate(event.data.dt * 1000);
+  wind.innerHTML = event.data.wind.speed;
+  humidity.innerHTML = event.data.main.humidity;
+  description.innerHTML = event.data.weather[0].description;
 }
