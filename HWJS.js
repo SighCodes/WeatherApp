@@ -35,10 +35,15 @@ function handleTemp(event) {
   let wind = document.querySelector("#wind");
   let humidity = document.querySelector("#humid");
   let description = document.querySelector("#condition");
+  let iconElement = document.querySelector("#icon");
   city.innerHTML = event.data.name;
   temperatureElement.innerHTML = event.data.main.temp;
   dayElement.innerHTML = showDate(event.data.dt * 1000);
   wind.innerHTML = event.data.wind.speed;
   humidity.innerHTML = event.data.main.humidity;
   description.innerHTML = event.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${event.data.weather[0].icon}@2x.png`
+  );
 }

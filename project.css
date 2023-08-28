@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap");
+
 .container {
   padding-inline: 400px;
   margin-top: 10px;
@@ -8,17 +10,22 @@ li {
 .sarasota {
   color: #4e31aa;
   font-size: 50px;
+  font-weight: 300;
+  font-family: "Libre Franklin", sans-serif;
   text-align: center;
 }
 .search-bar {
+  font-family: "Libre Franklin", sans-serif;
   position: absolute;
   width: 200px;
   top: 1em;
 }
 .data {
+  font-family: "Libre Franklin", sans-serif;
   text-align: right;
 }
 .status {
+  font-family: "Libre Franklin", sans-serif;
   text-transform: capitalize;
 }
 .cities {
@@ -26,14 +33,17 @@ li {
 }
 
 .date {
+  font-family: "Libre Franklin", sans-serif;
   font-size: 20px;
 }
 .conversion {
+  font-family: "Libre Franklin", sans-serif;
   font-size: 12px;
   top: -10px;
   position: relative;
 }
 .degree {
+  font-family: "Libre Franklin", sans-serif;
   font-size: 22px;
 }
 .icons {
@@ -42,8 +52,7 @@ li {
   text-align: center;
 }
 .headicon {
-  font-size: 150px;
-  color: orange;
+  font-size: 200px;
   position: absolute;
   left: auto;
   top: 0.6em;
