@@ -17,7 +17,7 @@ li {
 .search-bar {
   font-family: "Libre Franklin", sans-serif;
   position: absolute;
-  width: 200px;
+  width: 250px;
   top: 1em;
 }
 .data {
@@ -52,10 +52,11 @@ li {
   text-align: center;
 }
 .headicon {
-  font-size: 200px;
+  height: 45%;
+  width: auto;
   position: absolute;
   left: auto;
-  top: 0.6em;
+  top: 5em;
 }
 .search-button {
   background-color: #1f8a70;
@@ -79,6 +80,5 @@ li {
 
 .buttons {
   display: block;
-  margin: 5px;
   text-align: right;
 }
