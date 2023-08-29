@@ -16,9 +16,7 @@ li {
 }
 .search-bar {
   font-family: "Libre Franklin", sans-serif;
-  position: absolute;
   width: 250px;
-  top: 1em;
 }
 .data {
   font-family: "Libre Franklin", sans-serif;
@@ -61,7 +59,8 @@ li {
 .search-button {
   background-color: #1f8a70;
   border-color: #1f8a70;
-  margin-top: -10px;
+  position: absolute;
+  right: 20px;
 }
 .search-button:hover {
   background-color: #1f8a70;
