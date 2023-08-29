@@ -61,24 +61,13 @@ li {
 .search-button {
   background-color: #1f8a70;
   border-color: #1f8a70;
+  margin-top: -10px;
 }
 .search-button:hover {
   background-color: #1f8a70;
   border-color: #1f8a70;
 }
-.current-button {
-  background-color: #2f58cd;
-  border-color: #2f58cd;
-}
-.current-button:hover {
-  background-color: #2f58cd;
-  border-color: #2f58cd;
-}
+
 .card {
   padding: 20px;
-}
-
-.buttons {
-  display: block;
-  text-align: right;
 }
