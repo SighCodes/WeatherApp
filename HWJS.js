@@ -16,6 +16,27 @@ function showDate(timestamp) {
   return `${day}, ${hour}:${minutes}`;
 }
 
+function getForecast() {
+  let forecastElement = document.querySelector("#forecast-container");
+  forecastElement.innerHTML = `
+    <div class="row">
+            <div class="col-2">
+              <div class="weather-date">Fri</div>
+              <img
+                src="https://openweathermap.org/img/wn/11d@2x.png"
+                alt=""
+                width="50"
+              />
+              <br />
+              <div class="forecast-temps">
+                <span class="forecast-temp-high">18°</span>
+                <span class="forecast-temp-low">12°</span>
+              </div>
+            </div>
+          </div>
+  `;
+}
+
 function searchButton(event) {
   event.preventDefault();
   let searchedResults = document.querySelector("#exampleFormControlInput1");
@@ -46,4 +67,5 @@ function handleTemp(event) {
     "src",
     `https://openweathermap.org/img/wn/${event.data.weather[0].icon}@2x.png`
   );
+  getForecast();
 }
