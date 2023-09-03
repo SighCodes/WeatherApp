@@ -37,10 +37,10 @@ function handleTemp(event) {
   let description = document.querySelector("#condition");
   let iconElement = document.querySelector("#icon");
   city.innerHTML = event.data.name;
-  temperatureElement.innerHTML = math.round(event.data.main.temp);
+  temperatureElement.innerHTML = Math.round(event.data.main.temp);
   dayElement.innerHTML = showDate(event.data.dt * 1000);
-  wind.innerHTML = math.round(event.data.wind.speed);
-  humidity.innerHTML = math.round(event.data.main.humidity);
+  wind.innerHTML = Math.round(event.data.wind.speed);
+  humidity.innerHTML = Math.round(event.data.main.humidity);
   description.innerHTML = event.data.weather[0].description;
   iconElement.setAttribute(
     "src",
