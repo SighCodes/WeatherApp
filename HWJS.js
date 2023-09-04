@@ -11,17 +11,21 @@ function showDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue"];
   let day = days[date.getDay()];
   return `${day}, ${hour}:${minutes}`;
 }
 
 function getForecast() {
   let forecastElement = document.querySelector("#forecast-container");
-  forecastElement.innerHTML = `
-    <div class="row">
-            <div class="col-2">
-              <div class="weather-date">Fri</div>
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <div class="weather-date">${day}</div>
               <img
                 src="https://openweathermap.org/img/wn/11d@2x.png"
                 alt=""
@@ -32,9 +36,11 @@ function getForecast() {
                 <span class="forecast-temp-high">18°</span>
                 <span class="forecast-temp-low">12°</span>
               </div>
-            </div>
-          </div>
-  `;
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function searchButton(event) {
