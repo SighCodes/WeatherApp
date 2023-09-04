@@ -62,7 +62,7 @@ function showForecast(response) {
 function getForecast(coordinates) {
   let apiKey = `2f3f1baf409eboat1de63d1abc36da6b`;
   let apiEndPoint = `https://api.shecodes.io/weather/v1/forecast`;
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `${apiEndPoint}?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
   console.log(coordinates);
   console.log(apiUrl);
@@ -73,12 +73,14 @@ function getForecast(coordinates) {
 function searchButton(event) {
   event.preventDefault();
   let searchedResults = document.querySelector("#exampleFormControlInput1");
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "2f3f1baf409eboat1de63d1abc36da6b";
   let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
   let apiUrl = `${apiEndpoint}?query=${searchedResults.value}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(handleTemp);
+
+  searchedResults.value = "";
 }
 
 form.addEventListener("submit", searchButton);
