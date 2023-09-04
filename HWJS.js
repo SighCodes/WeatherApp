@@ -16,33 +16,49 @@ function showDate(timestamp) {
   return `${day}, ${hour}:${minutes}`;
 }
 
+function formatDay(currentDate) {
+  let date = new Date(currentDate * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-container");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-              <div class="weather-date">${day}</div>
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <div class="weather-date">${formatDay(forecastDay.time)}</div>
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
                 alt=""
                 width="50"
               />
               <br />
               <div class="forecast-temps">
-                <span class="forecast-temp-high">18°</span>
-                <span class="forecast-temp-low">12°</span>
+                <span class="forecast-temp-low">${Math.round(
+                  forecastDay.temperature.minimum
+                )}°</span>
+                <span class="forecast-temp-high">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</span>
               </div>
           </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
   let apiKey = `2f3f1baf409eboat1de63d1abc36da6b`;
   let apiEndPoint = `https://api.shecodes.io/weather/v1/forecast`;
