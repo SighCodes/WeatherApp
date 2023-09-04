@@ -16,7 +16,8 @@ function showDate(timestamp) {
   return `${day}, ${hour}:${minutes}`;
 }
 
-function getForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-container");
 
   let forecastHTML = `<div class="row">`;
@@ -27,7 +28,7 @@ function getForecast() {
       `<div class="col-2">
               <div class="weather-date">${day}</div>
               <img
-                src="https://openweathermap.org/img/wn/11d@2x.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                 alt=""
                 width="50"
               />
@@ -42,36 +43,48 @@ function getForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  let apiKey = `2f3f1baf409eboat1de63d1abc36da6b`;
+  let apiEndPoint = `https://api.shecodes.io/weather/v1/forecast`;
+  let units = "metric";
+  let apiUrl = `${apiEndPoint}?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
+  console.log(coordinates);
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(showForecast);
+}
 
 function searchButton(event) {
   event.preventDefault();
   let searchedResults = document.querySelector("#exampleFormControlInput1");
   let units = "metric";
-  let apiKey = "7784a4cd4aa2e0c25ead7bd96d585b8a";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndpoint}?q=${searchedResults.value}&appid=${apiKey}&units=${units}`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(handleTemp);
+  let apiKey = "2f3f1baf409eboat1de63d1abc36da6b";
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
+  let apiUrl = `${apiEndpoint}?query=${searchedResults.value}&key=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(handleTemp);
 }
 
 form.addEventListener("submit", searchButton);
 
 function handleTemp(event) {
-  let city = document.querySelector("#hometown");
+  let cityName = document.querySelector("#hometown");
   let temperatureElement = document.querySelector("#temp-unit");
   let dayElement = document.querySelector("#daytime");
   let wind = document.querySelector("#wind");
   let humidity = document.querySelector("#humid");
   let description = document.querySelector("#condition");
   let iconElement = document.querySelector("#icon");
-  city.innerHTML = event.data.name;
-  temperatureElement.innerHTML = Math.round(event.data.main.temp);
-  dayElement.innerHTML = showDate(event.data.dt * 1000);
+  cityName.innerHTML = event.data.city;
+  temperatureElement.innerHTML = Math.round(event.data.temperature.current);
+  dayElement.innerHTML = showDate(event.data.time * 1000);
   wind.innerHTML = Math.round(event.data.wind.speed);
-  humidity.innerHTML = Math.round(event.data.main.humidity);
-  description.innerHTML = event.data.weather[0].description;
+  humidity.innerHTML = Math.round(event.data.temperature.humidity);
+  description.innerHTML = event.data.condition.description;
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${event.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${event.data.condition.icon}.png`
   );
-  getForecast();
+
+  getForecast(event.data.coordinates);
 }
