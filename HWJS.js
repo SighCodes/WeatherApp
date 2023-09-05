@@ -40,7 +40,7 @@ function showForecast(response) {
                   forecastDay.condition.icon
                 }.png"
                 alt=""
-                width="50"
+                width="70"
               />
               <br />
               <div class="forecast-temps">
