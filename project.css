@@ -8,9 +8,9 @@ li {
   list-style: none;
 }
 .sarasota {
-  color: #4e31aa;
+  color: #403c70;
   font-size: 50px;
-  font-weight: 300;
+  font-weight: 600;
   font-family: "Libre Franklin", sans-serif;
   text-align: center;
 }
@@ -39,7 +39,9 @@ li {
 }
 .status {
   font-family: "Libre Franklin", sans-serif;
+  font-weight: 600;
   text-transform: capitalize;
+  color: #423d72;
 }
 .cities {
   text-align: right;
@@ -47,6 +49,9 @@ li {
 .date {
   font-family: "Libre Franklin", sans-serif;
   font-size: 20px;
+}
+.update {
+  color: #423d72;
 }
 .conversion {
   font-family: "Libre Franklin", sans-serif;
@@ -57,6 +62,16 @@ li {
 .degree {
   font-family: "Libre Franklin", sans-serif;
   font-size: 36px;
+}
+
+.humidity {
+  color: #423d72;
+  font-weight: 600;
+}
+
+.wind {
+  color: #423d72;
+  font-weight: 600;
 }
 .icons {
   font-size: 50px;
@@ -69,15 +84,19 @@ li {
   top: 6em;
 }
 .search-button {
-  background-color: #1f8a70;
-  border-color: #1f8a70;
+  background-color: #443f75;
+  border-color: #423d72;
+  color: white;
   position: absolute;
   right: 20px;
+  box-shadow: 3px 3px 3px grey;
 }
 .search-button:hover {
-  background-color: #1f8a70;
-  border-color: #1f8a70;
+  background-color: #443f75;
+  border-color: #423d72;
+  color: white;
 }
 .card {
   padding: 20px;
+  background-color: rgb(249, 249, 249);
 }
